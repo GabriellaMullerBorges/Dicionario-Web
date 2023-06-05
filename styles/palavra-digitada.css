@@ -1,0 +1,38 @@
+.palavra{
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 2rem;
+    
+}
+.escrita{
+    width:90%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.som{
+    display: flex;
+    height: auto;
+}
+.palavra-digitada-div{
+font-size:xx-large;
+font-weight: 700;
+}
+
+.som-palavra-btn{
+}
+.fonetica-palavra{
+    color: blueviolet;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.som img{
+    height: 80%;
+    width:80%;
+}

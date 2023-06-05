@@ -1,0 +1,42 @@
+
+.toggle-container {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+  
+  .toggle-input {
+    display: none;
+  }
+  
+  .toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #615e5e;
+    border-radius: 34px;
+    cursor: pointer;
+  }
+  
+  .toggle-label:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  
+  .toggle-input:checked + .toggle-label {
+    background-color: #2196F3;
+  }
+  
+  .toggle-input:checked + .toggle-label:before {
+    transform: translateX(26px);
+  }

@@ -1,0 +1,35 @@
+.pesquisa{
+    background-color: rgb(223, 223, 223);
+    height: 40px;
+    margin-top: 1rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start
+}
+
+.espaco-pesquisa{
+    border-radius: 15px;
+    width: 98%;
+    display: flex;
+    height: 30px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lupa{
+    width:20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.input-pesquisa{
+    border-radius: 15px;
+    width:80%;
+    border: none;
+    outline: none;
+    height: 30px;
+    margin-left: 2px;
+    background-color: rgb(223, 223, 223);
+}

@@ -3,37 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dictionary web app">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Dicionario web app</title>
+  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="stylesheet" href="styles/base.css"/>
+  <link rel="stylesheet" href="styles/nav.css"/>
+  <link rel="stylesheet" href="styles/pesquisa.css"/>
+  <link rel="stylesheet" href="styles/palavra-digitada.css"/>
+  <link rel="stylesheet" href="styles/explicacao.css"/>
+  <link rel="stylesheet" href="styles/toggle.css"/>
+  <title>Dictionary web app</title>
 </head>
 <header>
-    <nav>
-        <div class="icone-dicionario"></div>
-        <div class="menu-dropdown"></div>
-        <div class="toggle">
-            <div class="toggle-btn"></div>
-            <div class="mode"></div>
+    <nav class="nav">
+        <div class="icone-dicionario">
+            <img src="./images/logo.svg" alt="simbolo dicionario" class="dicionario">
+        </div>
+        <div class="menu-dropdown">
+            <div class="fonte-atual">
+                <p>Serif</p>
+                <img src="./images/icon-arrow-down.svg" class="arrow-down" alt="flecha para baixo" >
+            </div>
+        </div>
+        <div class="mode">
+            <div class="toggle-container">
+                <input type="checkbox" id="toggle" class="toggle-input">
+                <label for="toggle" class="toggle-label"></label>
+            </div>
+            <img src="./images/icon-moon.svg" alt="" class="dark-mode">
         </div>
     </nav>
     <div class="pesquisa">
         <div class="espaco-pesquisa">
             <input class="input-pesquisa">
-            <img class="lupa" src="" alt="lupa de pesquisa" >
+            <img class="lupa" src="./images/icon-search.svg" alt="lupa de pesquisa" >
         </div>
     </div>
+
     <div class="palavra">
-        <div class="palavra-digitada"></div>
-        <div class="som-palavra-btn"></div>
-        <div class="fonetica-palavra"></div>
+        <div class="escrita">
+            <div class="palavra-digitada-div">
+                <p class="palavra-digitada">Palavra</p>
+            </div>
+            <div class="fonetica-palavra">
+                <p>/"fonetica/</p>
+            </div>
+        </div>
+        <div class="som">
+            <div class="som-palavra-btn">
+                <img src="./images/icon-play.svg" class="som" alt="icone som" >
+            </div>
+        </div>
     </div>
 </header>
 <body>
     <section>
         <div class="explicacao">
             <div class="tipo-palavra">
+                <p>Tipo</p>
+            </div>
                 <div class="significado">
+                    <p>Significado</p>
                     <ul class="lista-significados">
                         <li class="item-significado"></li>
                     </ul>
@@ -43,7 +74,7 @@
                         <li class="item-sinonimo"></li>
                     </ul>
                 </div>
-            </div>
+            
         </div>
         <div class="source"></div>
     </section>
