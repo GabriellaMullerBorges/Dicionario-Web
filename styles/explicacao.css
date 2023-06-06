@@ -1,8 +1,45 @@
 .explicacao{
+    margin-top: 2rem;
 }
 
 .tipo-palavra{
-    font-weight: 700;
-    font-style: italic;
-    
+    font-weight: 800;
+    font-style: italic; 
 }
+
+.significado, .sinonimos, .source-text {
+    color: #757575;
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+.lista-significados {
+    list-style-type: none; 
+  }
+  
+  .lista-significados .item-significado::before {
+    content: '•'; 
+    color: #a445ed; 
+    display: inline-block; 
+    width: 10px; 
+    text-align: center; 
+    margin-right: 5px; 
+  }
+  
+  .lista-significados .item-significado {
+    color: black; 
+    font-weight: 500;
+  }
+  
+  .sinonimos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .lista-sinonimos{
+    list-style: none;
+    width:70%;
+    font-weight: 700;
+    color:#a445ed; 
+  }

@@ -1,0 +1,23 @@
+
+.dropdown-menu{
+    position: absolute;
+    color: blueviolet;
+    box-shadow: 0 0 2px black;
+    display: none;
+}
+
+
+.dropdown-menu a{
+    display: block;
+    color: blueviolet;
+    background-color: rgb(245, 245, 245);
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.dropdown{
+    font-weight: 700;
+
+}

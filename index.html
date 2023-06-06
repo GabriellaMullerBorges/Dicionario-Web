@@ -6,38 +6,52 @@
   <meta name="description" content="Dictionary web app">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles/style.css"/>
   <link rel="stylesheet" href="styles/base.css"/>
-  <link rel="stylesheet" href="styles/nav.css"/>
-  <link rel="stylesheet" href="styles/pesquisa.css"/>
-  <link rel="stylesheet" href="styles/palavra-digitada.css"/>
+  <link rel="stylesheet" href="styles/dropdown.css"/>  
   <link rel="stylesheet" href="styles/explicacao.css"/>
+  <link rel="stylesheet" href="styles/footer.css"/>
+  <link rel="stylesheet" href="styles/nav.css"/>
+  <link rel="stylesheet" href="styles/palavra-digitada.css"/>
+  <link rel="stylesheet" href="styles/pesquisa.css"/>
+  <link rel="stylesheet" href="styles/source.css"/>
   <link rel="stylesheet" href="styles/toggle.css"/>
   <title>Dictionary web app</title>
 </head>
 <header>
     <nav class="nav">
-        <div class="icone-dicionario">
-            <img src="./images/logo.svg" alt="simbolo dicionario" class="dicionario">
-        </div>
-        <div class="menu-dropdown">
-            <div class="fonte-atual">
-                <p>Serif</p>
-                <img src="./images/icon-arrow-down.svg" class="arrow-down" alt="flecha para baixo" >
-            </div>
-        </div>
-        <div class="mode">
-            <div class="toggle-container">
-                <input type="checkbox" id="toggle" class="toggle-input">
-                <label for="toggle" class="toggle-label"></label>
-            </div>
-            <img src="./images/icon-moon.svg" alt="" class="dark-mode">
-        </div>
+        <ul class="lista-nav">
+            <li class="logo"> 
+                <div class="icone-dicionario">
+                    <img src="./images/logo.svg" alt="simbolo dicionario" class="dicionario">
+                </div>
+            </li>
+            <li class="dropdown">
+                    <a href="#">Fonte</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Serif</a>
+                        <a href="#">Sans-Serif</a>
+                        <a href="#">Mono</a>
+                    </div>
+                    <img src="./images/icon-arrow-down.svg" class="arrow-down" alt="flecha para baixo" >
+            </li>   
+            <li>  
+                <div class="mode">
+                    <div class="toggle-container">
+                        <input type="checkbox" id="toggle" class="toggle-input">
+                        <label for="toggle" class="toggle-label"></label>
+                    </div>
+                <img src="./images/icon-moon.svg" alt="lua" class="dark-mode">
+                </div> 
+            </li>
+        </ul>
     </nav>
     <div class="pesquisa">
         <div class="espaco-pesquisa">
-            <input class="input-pesquisa">
-            <img class="lupa" src="./images/icon-search.svg" alt="lupa de pesquisa" >
+            <input class="input-pesquisa" id="inp-word" placeholder="Type your word here...">
+            <button class="search-btn">
+                <img class="lupa" src="./images/icon-search.svg" alt="lupa de pesquisa" >
+            </button>
+            
         </div>
     </div>
 
@@ -64,22 +78,34 @@
                 <p>Tipo</p>
             </div>
                 <div class="significado">
-                    <p>Significado</p>
+                    <p class="significado">Significado</p>
                     <ul class="lista-significados">
-                        <li class="item-significado"></li>
+                        <li class="item-significado">
+                            exemplo
+                        </li>
+                        <li class="item-significado">
+                            exemplo
+                        </li>
+                        <li class="item-significado">
+                            exemplo
+                        </li>
                     </ul>
                 </div>
                 <div class="sinonimos">
+                    <p>Sinônimos</p>
                     <ul class="lista-sinonimos">
-                        <li class="item-sinonimo"></li>
+                        <li class="item-sinonimo"> exemplos</li>
                     </ul>
                 </div>
-            
         </div>
-        <div class="source"></div>
+        <div class="source">
+            <p class="source-text">Fonte</p>
+            <p class="link-source"> www.teste.com</p>
+        </div>
     </section>
     <footer class="rodape">
         <p class="info">Coded by Gabriella Borges<a></a></p>
-    </footer>
+    </footer>  
 </body>
+  <script src="main.js"></script>
 </html>

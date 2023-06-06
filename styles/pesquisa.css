@@ -32,4 +32,10 @@
     height: 30px;
     margin-left: 2px;
     background-color: rgb(223, 223, 223);
+    margin-left: 1rem;
+}
+
+.search-btn{
+    border: none;
+    background-color: transparent;
 }
