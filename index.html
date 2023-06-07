@@ -17,7 +17,9 @@
   <link rel="stylesheet" href="styles/toggle.css"/>
   <title>Dictionary web app</title>
 </head>
-<header>
+
+<body>
+<div class="container" id="container">
     <nav class="nav">
         <ul class="lista-nav">
             <li class="logo"> 
@@ -48,64 +50,65 @@
     <div class="pesquisa">
         <div class="espaco-pesquisa">
             <input class="input-pesquisa" id="inp-word" placeholder="Type your word here...">
-            <button class="search-btn">
+            <button class="search-btn" id="botao-pesquisa">
                 <img class="lupa" src="./images/icon-search.svg" alt="lupa de pesquisa" >
             </button>
             
         </div>
     </div>
 
-    <div class="palavra">
-        <div class="escrita">
-            <div class="palavra-digitada-div">
-                <p class="palavra-digitada">Palavra</p>
-            </div>
-            <div class="fonetica-palavra">
-                <p>/"fonetica/</p>
-            </div>
-        </div>
-        <div class="som">
-            <div class="som-palavra-btn">
-                <img src="./images/icon-play.svg" class="som" alt="icone som" >
-            </div>
-        </div>
-    </div>
-</header>
-<body>
-    <section>
-        <div class="explicacao">
-            <div class="tipo-palavra">
-                <p>Tipo</p>
-            </div>
-                <div class="significado">
-                    <p class="significado">Significado</p>
-                    <ul class="lista-significados">
-                        <li class="item-significado">
-                            exemplo
-                        </li>
-                        <li class="item-significado">
-                            exemplo
-                        </li>
-                        <li class="item-significado">
-                            exemplo
-                        </li>
-                    </ul>
+    <section class="resultado">
+        <div class="palavra">
+            <div class="escrita">
+                <div class="palavra-digitada-div">
+                    <p class="palavra-digitada">Palavra</p>
                 </div>
-                <div class="sinonimos">
-                    <p>Sinônimos</p>
-                    <ul class="lista-sinonimos">
-                        <li class="item-sinonimo"> exemplos</li>
-                    </ul>
+                <div class="fonetica-palavra">
+                    <p>/"fonetica/</p>
                 </div>
+            </div>
+            <div class="som">
+                <div class="som-palavra-btn">
+                    <img src="./images/icon-play.svg" class="som" alt="icone som" >
+                </div>
+            </div>
         </div>
-        <div class="source">
-            <p class="source-text">Fonte</p>
-            <p class="link-source"> www.teste.com</p>
-        </div>
+
+        
+            <div class="explicacao">
+                <div class="tipo-palavra">
+                    <p>Tipo</p>
+                </div>
+                    <div class="significado">
+                        <p class="significado">Significado</p>
+                        <ul class="lista-significados">
+                            <li class="item-significado">
+                                exemplo
+                            </li>
+                            <li class="item-significado">
+                                exemplo
+                            </li>
+                            <li class="item-significado">
+                                exemplo
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sinonimos">
+                        <p>Sinônimos</p>
+                        <ul class="lista-sinonimos">
+                            <li class="item-sinonimo"> exemplos</li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="source">
+                <p class="source-text">Fonte</p>
+                <p class="link-source"> www.teste.com</p>
+            </div>
     </section>
-    <footer class="rodape">
-        <p class="info">Coded by Gabriella Borges<a></a></p>
-    </footer>  
 </body>
+</div> 
+<footer class="rodape">
+        <p class="info">Coded by Gabriella Borges<a></a></p>
+    </footer> 
   <script src="main.js"></script>
 </html>
