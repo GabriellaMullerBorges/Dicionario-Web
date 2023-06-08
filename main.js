@@ -1,83 +1,81 @@
+// Selecionar elementos HTML
+const pesquisaBtn = document.querySelector("#botao-pesquisa");
+const palavraInput = document.getElementById('inp-word');
+const palavraDigitadaElement = document.getElementById('palavra-digitada');
+const foneticaElement = document.getElementById('fonetica');
+const sinonimoElement =  document.getElementById('sinonimo');
+const significadoElement = document.querySelector("item-significado");
+const sourceElement =  document.querySelector("link-source")
+const resultado = document.querySelector('.resultado');
 
+// Definir função de clique do botão de pesquisa
+pesquisaBtn.addEventListener("click", () => {
+    const palavraDigitada = palavraInput.value;
+    pegaPalavra(palavraDigitada);
+});
 
-const explicacao = document.querySelector(".explicacao");
-const som =  document.querySelector(".som");
-const pesquisa =  document.querySelector(".search-btn")
-const resultado = document.querySelector(".resultado")
-
-async function pegaPalavra(palavra){
-    try{
-        var url = await fetch (`https://api.dictionaryapi.dev/api/v2/entries/en/${palavra}`);
+// Função assíncrona para obter a palavra
+async function pegaPalavra(palavra) {
+    try {
+        var url = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${palavra}`);
         var urlConvertida = await url.json();
-        if(urlConvertida.erro){
+
+        if (urlConvertida.erro) {
             throw Error('Não reconheço essa palavra');
-        }
-        alert(palavra);
-        console.log(urlConvertida)
-        return urlConvertida
+        }       
+
+        console.log(urlConvertida);
+        palavraDigitadaElement.textContent = palavra;
+        teste(urlConvertida);
+        
+
+        return urlConvertida;
     } catch (erro) {
-        alert(erro)
+        alert(erro);
     }
 }
 
-pesquisa.addEventListener("click",() => {
-    var digitacao = document.getElementById("inp-word")
-    var palavraDigitada = digitacao.value;
-    pegaPalavra(palavraDigitada);
-    mostraNaTela(); /* o tempo da função está errado*/
-})
-
-
-function mostraNaTela(){
-    alert("palavras")
-/*resultado.innerHTML = `
-<div class="palavra">
-<div class="escrita">
-    <div class="palavra-digitada-div">
-        <p class="palavra-digitada">${palavraDigitada}</p>
-    </div>
-    <div class="fonetica-palavra">
-        <p>${urlConvertida[0].phonetics[0,1,2]}</p>
-    </div>
-</div>
-<div class="som">
-    <div class="som-palavra-btn">
-        <img src="./images/icon-play.svg" class="som" alt="icone som" >
-    </div>
-</div>
-</div>
-
-
-<div class="explicacao">
-    <div class="tipo-palavra">
-        <p>${urlConvertida[0].meanings[0].partOfSpeech}</p>
-    </div>
-        <div class="significado">
-            <p class="significado">Significado</p>
-            <ul class="lista-significados">
-                <li class="item-significado">
-                ${urlConvertida[0].meanings[0].definitions[0]}
-                </li>
-                <li class="item-significado">
-                ${urlConvertida[0].meanings[0].definitions[1]}
-                </li>
-                <li class="item-significado">
-                ${urlConvertida[0].meanings[0].definitions[2]}
-                </li>
-            </ul>
+function teste(array){
+    resultado.innerHTML =  `<div class="palavra">
+    <div class="escrita">
+        <div class="palavra-digitada-div">
+            <p class="palavra-digitada" id="palavra-digitada"></p>
         </div>
-        <div class="sinonimos">
-            <p>Sinônimos</p>
-            <ul class="lista-sinonimos">
-                <li class="item-sinonimo"> ${urlConvertida[0].meanings[0].synonyms[0]}</li>
-            </ul>
+        <div class="fonetica-palavra">
+            <p id="fonetica">${array[0].phonetic}</p>
         </div>
-</div>
-<div class="source">
-    <p class="source-text">Fonte</p>
-    <p class="link-source">  ${urlConvertida[0].sourceUrls[0]}</p>
+    </div>
+    <div class="som">
+        <div class="som-palavra-btn">
+            <img src="./images/icon-play.svg" class="som" alt="icone som" >
+        </div>
+    </div>
 </div>
 
-`;*/
 
+    <div class="explicacao">
+        <div class="tipo-palavra">
+            <p>${array[0].meanings[0].partOfSpeech}</p>
+        </div>
+            <div class="significado">
+                <p class="significado">Significado</p>
+                <ul class="lista-significados">
+                    <li class="item-significado">
+                    ${array[0].meanings[0].definitions[0].definition}
+                    </li>
+                </ul>
+            </div>
+            <div class="sinonimos">
+                <p>Examples</p>
+                <ul class="lista-sinonimos">
+                    <li class="item-sinonimo"> 
+                        <p id="sinonimo">${array[0].meanings[0].definitions[1].example}</p>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <div class="source">
+        <p class="source-text">Source</p>
+        <p class="link-source">${array[0].sourceUrls}</p>
+    </div>`
 }

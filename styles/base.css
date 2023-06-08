@@ -1,3 +1,15 @@
+:root{
+    --background-light: rgb(243, 230, 255);
+    --background-dark: rgb(31, 21, 32);
+    --light-container:  rgb(239, 245, 245);
+    --dark-container: black;
+    --light-font-menu: blueviolet;
+    --dark-font-menu: #a445ed;
+    --light-font:black;
+    --dark-font:white;
+}
+
+
 
 *{  margin: 0;
     padding:0;
@@ -8,13 +20,34 @@
 
 body{
     margin: 12px;
-    background-color: rgb(243, 230, 255);
+    background-color: var(--background-light)
 }
   
 #container{
     padding: 24px;
     width:95%;
     height: fit-content;
-    background-color: azure !important;
+    background-color: var(--light-container);
     border-radius: 25px;
 }
+
+.theme-light{
+    background-color: var(--background-light);
+    color: var(--light-font);
+}
+
+.theme-dark {
+    background-color: var(--background-dark);
+    color: var(--dark-font);
+  }
+
+.container{
+    &.theme-light {
+        background-color: var(--light-container) !important;; 
+        color: var(--dark-font);
+      }
+    &.theme-dark {
+        background-color: var(--dark-container) !important;;
+        color: var(--light-font)
+      }
+  }

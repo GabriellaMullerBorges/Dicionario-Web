@@ -18,6 +18,22 @@
 }
 
 .dropdown{
+    background-color: transparent;
     font-weight: 700;
+    &.theme-light {
+        background-color: white;
+      }
+    &.theme-dark {
+        background-color: black;
+      }
+}
 
+.dropdownlink{
+    background-color: transparent;
+    &.theme-light {
+        color: black
+      }
+    &.theme-dark {
+        color: white
+      } 
 }

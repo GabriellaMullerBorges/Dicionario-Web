@@ -5,6 +5,12 @@
 .tipo-palavra{
     font-weight: 800;
     font-style: italic; 
+    &.theme-light {
+      color: black
+    }
+  &.theme-dark {
+      color: white
+    } 
 }
 
 .significado, .sinonimos, .source-text {
@@ -43,3 +49,12 @@
     font-weight: 700;
     color:#a445ed; 
   }
+
+.item-significado{
+  &.theme-light {
+    color: black
+  }
+&.theme-dark {
+    color: white
+  } 
+}

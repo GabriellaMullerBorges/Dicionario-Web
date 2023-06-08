@@ -1,4 +1,12 @@
 .link-source{
     text-decoration: underline;
     margin-bottom: 1rem;
+    
+    &.theme-dark {
+        color: white
+      } 
+    &.theme-light {
+        color: black
+      }
+   
 }
