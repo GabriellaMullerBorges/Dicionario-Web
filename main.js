@@ -7,6 +7,7 @@ const sinonimoElement =  document.getElementById('sinonimo');
 const significadoElement = document.querySelector("item-significado");
 const sourceElement =  document.querySelector("link-source")
 const resultado = document.querySelector('.resultado');
+const palavra = document.querySelector('.palavra');
 
 // Definir função de clique do botão de pesquisa
 pesquisaBtn.addEventListener("click", () => {
@@ -25,7 +26,7 @@ async function pegaPalavra(palavra) {
         }       
 
         console.log(urlConvertida);
-        palavraDigitadaElement.textContent = palavra;
+       
         teste(urlConvertida);
         
 
@@ -35,29 +36,29 @@ async function pegaPalavra(palavra) {
     }
 }
 
-function teste(array){
-    resultado.innerHTML =  `<div class="palavra">
-    <div class="escrita">
-        <div class="palavra-digitada-div">
-            <p class="palavra-digitada" id="palavra-digitada"></p>
-        </div>
-        <div class="fonetica-palavra">
-            <p id="fonetica">${array[0].phonetic}</p>
-        </div>
-    </div>
-    <div class="som">
-        <div class="som-palavra-btn">
-            <img src="./images/icon-play.svg" class="som" alt="icone som" >
-        </div>
-    </div>
-</div>
-
-
-    <div class="explicacao">
+function mostraExplicacao2(array) {
+    const partOfSpeechArray = [];
+  
+        for (let i = 0; i < array[0].meanings.length; i++) {
+        partOfSpeechArray.push(array[0].meanings[i].partOfSpeech);
+        /*return `<div class="explicacao">
         <div class="tipo-palavra">
-            <p>${array[0].meanings[0].partOfSpeech}</p>
-        </div>
-            <div class="significado">
+        <p>
+            ${partOfSpeechArray[i]}
+            </p>
+        </div>`*/
+
+        }
+  
+    return partOfSpeechArray;
+ }
+
+function teste(array){
+    resultado.innerHTML =  `
+
+        ${mostraExplicacao2(array)[1]}
+
+                <div class="significado">
                 <p class="significado">Significado</p>
                 <ul class="lista-significados">
                     <li class="item-significado">
@@ -74,8 +75,25 @@ function teste(array){
                 </ul>
             </div>
     </div>
+
     <div class="source">
         <p class="source-text">Source</p>
         <p class="link-source">${array[0].sourceUrls}</p>
     </div>`
 }
+
+
+/*let audio = Array()
+
+const audioFile = document.querySelector('.som').addEventListener('click', () => {
+    let playAudio = new Audio(`${audio[0]}`)
+    playAudio.play()
+  })
+
+  function populaAudio(data) {
+    for(let i = 0; i < data[0].phonetics.length; i++) {
+      if(data[0].phonetics[i].audio !== '') {
+        audio.push(data[0].phonetics[i].audio)
+      }
+    }
+  }*/
