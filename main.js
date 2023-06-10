@@ -27,73 +27,101 @@ async function pegaPalavra(palavra) {
 
         console.log(urlConvertida);
        
-        teste(urlConvertida);
+         mostraInfos(urlConvertida);
         
 
         return urlConvertida;
     } catch (erro) {
         alert(erro);
     }
-}
 
-function mostraExplicacao2(array) {
-    const partOfSpeechArray = [];
+function mostraInfos(array){
+    
+    let html = "";
+    let phonetic = [];
   
-        for (let i = 0; i < array[0].meanings.length; i++) {
-        partOfSpeechArray.push(array[0].meanings[i].partOfSpeech);
-        /*return `<div class="explicacao">
-        <div class="tipo-palavra">
-        <p>
-            ${partOfSpeechArray[i]}
-            </p>
-        </div>`*/
-
-        }
+    html += '<div class="palavra">';
+    html += '<div class="escrita">';
+    html += '<div class="palavra-digitada-div">';
+    html += `<p class="palavra-digitada">${array[0].word}</p>`;
+    html += '</div>';
   
-    return partOfSpeechArray;
- }
-
-function teste(array){
-    resultado.innerHTML =  `
-
-        ${mostraExplicacao2(array)[1]}
-
-                <div class="significado">
-                <p class="significado">Significado</p>
-                <ul class="lista-significados">
-                    <li class="item-significado">
-                    ${array[0].meanings[0].definitions[0].definition}
-                    </li>
-                </ul>
-            </div>
-            <div class="sinonimos">
-                <p>Examples</p>
-                <ul class="lista-sinonimos">
-                    <li class="item-sinonimo"> 
-                        <p id="sinonimo">${array[0].meanings[0].definitions[1].example}</p>
-                    </li>
-                </ul>
-            </div>
-    </div>
-
-    <div class="source">
-        <p class="source-text">Source</p>
-        <p class="link-source">${array[0].sourceUrls}</p>
-    </div>`
-}
-
-
-/*let audio = Array()
-
-const audioFile = document.querySelector('.som').addEventListener('click', () => {
-    let playAudio = new Audio(`${audio[0]}`)
-    playAudio.play()
-  })
-
-  function populaAudio(data) {
-    for(let i = 0; i < data[0].phonetics.length; i++) {
-      if(data[0].phonetics[i].audio !== '') {
-        audio.push(data[0].phonetics[i].audio)
+    for (let i = 0; i < array[0].phonetics.length; i++) {
+      if (array[0].phonetics[i].text !== undefined) {
+        phonetic.push(array[0].phonetics[i].text);
       }
     }
-  }*/
+  
+    html += '<div class="fonetica-palavra">';
+    html += `<p id="fonetica">${phonetic[0]}</p>`;
+    html += '</div>';
+  
+    html += '<div class="som">';
+    html += '<div class="som-palavra-btn">';
+    html += '<img src="./images/icon-play.svg" class="som" alt="icone som" >';
+    html += '</div>';
+    html += '</div>';
+  
+    html += '<div class="explicacao">';
+  
+    for (let meaning of array[0].meanings) {
+      const partOfSpeech = meaning.partOfSpeech;
+      const definitions = meaning.definitions;
+      const synonyms = meaning.synonyms;
+      const antonyms = meaning.antonyms;
+  
+      html += '<div class="tipo-palavra">';
+      html += `<p>${partOfSpeech}</p>`;
+      html += '</div>';
+  
+      html += '<div class="significado">';
+      html += '<p class="significado">Meaning</p>';
+      html += '<ul class="lista-significados">';
+  
+      for (let definition of definitions) {
+        html += `<li class="item-significado">${definition.definition}</li>`;
+      }
+  
+      html += '</ul>';
+      html += '</div>';
+  
+      if (synonyms.length > 0) {
+        html += '<div class="sinonimos">';
+        html += '<p>Sinônimos</p>';
+        html += '<ul class="lista-sinonimos">';
+    
+        for (let synonym of synonyms) {
+          html += `<li class="item-sinonimo">${synonym}</li>`;
+        }
+    
+        html += '</ul>';
+        html += '</div>';
+      }
+  
+      if (antonyms.length > 0) {
+        html += '<div class="antonyms sinonimos">';
+        html += '<p>Antonyms</p>';
+        html += '<ul class="lista-antonyms lista-sinonimos">';
+    
+        for (let antonym of antonyms) {
+          html += `<li class="item-antonym">${antonym}</li>`;
+        }
+    
+        html += '</ul>';
+        html += '</div>';
+      }
+    }
+  
+    html += '</div>';
+  
+    html += '<div class="source">';
+    html += '<p class="source-text">Source</p>';
+    html += `<p class="link-source">${array[0].sourceUrls}</p>`;
+    html += '</div>';
+  
+    html += '</div>';
+    html += '</div>';
+
+  resultado.innerHTML = html;
+    } 
+}
