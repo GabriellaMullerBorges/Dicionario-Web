@@ -2,6 +2,16 @@
     margin-top: 2rem;
 }
 
+.resultado{
+  &.theme-light {
+    color: black
+  }
+&.theme-dark {
+  background-color:black;
+    color: white
+  } 
+}
+
 .tipo-palavra{
     font-weight: 800;
     font-style: italic; 
@@ -14,7 +24,6 @@
 }
 
 .significado, .sinonimos, .source-text {
-    color: #757575;
     margin: 1rem 0;
     font-weight: 600;
 }
@@ -25,16 +34,21 @@
   
   .lista-significados .item-significado::before {
     content: '•'; 
-    color: #a445ed; 
     display: inline-block; 
     width: 10px; 
     text-align: center; 
     margin-right: 5px; 
+    color: #a445ed ;
   }
   
-  .lista-significados .item-significado {
-    color: black; 
+  .lista-significados {
     font-weight: 500;
+    &.theme-light {
+      color: black
+    }
+    &.theme-dark {
+      color: white
+    }
   }
   
   .sinonimos {
@@ -50,15 +64,17 @@
     color:#a445ed; 
   }
 
-.item-significado{
-  &.theme-light {
-    color: black
-  }
-&.theme-dark {
-    color: white
-  } 
-}
-
 .som{
   cursor: pointer;
+  align-self: flex-end;
 }
+
+.item-significado {
+  font-weight: 500;
+  &.theme-light {
+  color: black
+}
+&.theme-dark {
+  color: white
+}
+ }

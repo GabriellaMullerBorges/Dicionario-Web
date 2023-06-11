@@ -35,8 +35,11 @@ async function pegaPalavra(palavra) {
         alert(erro);
     }
 
+  
+      
 function mostraInfos(array){
     
+  
     let html = "";
     let phonetic = [];
   
@@ -58,7 +61,16 @@ function mostraInfos(array){
   
     html += '<div class="som">';
     html += '<div class="som-palavra-btn">';
-    html += '<img src="./images/icon-play.svg" class="som" alt="icone som" >';
+   
+    window.playAudio = function(audioLink) {
+        if (audioLink) {
+          const audio = new Audio(audioLink);
+          audio.play();
+        }
+      }
+    
+           
+    html += `<img src="./images/icon-play.svg" class="som" alt="icone som" onclick="window.playAudio('${array[0].phonetics[0].audio}')">`;
     html += '</div>';
     html += '</div>';
   
@@ -124,4 +136,6 @@ function mostraInfos(array){
 
   resultado.innerHTML = html;
     } 
+
+
 }
