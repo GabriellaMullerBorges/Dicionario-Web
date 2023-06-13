@@ -131,7 +131,7 @@ function mostraInfos(array){
   
       if (synonyms.length > 0) {
         html += '<div class="sinonimos">';
-        html += '<p>Sinônimos</p>';
+        html += '<p>Synonyms</p>';
         html += '<ul class="lista-sinonimos">';
     
         for (let synonym of synonyms) {
