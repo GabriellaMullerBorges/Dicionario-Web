@@ -1,7 +1,4 @@
 # Dicionario-Web
-![image](https://github.com/GabriellaMullerBorges/Dicionario-Web/assets/112037356/6a6855df-fb40-4870-a8a8-28b0f1828b3e)
-
-
 ![Design preview for the Dictionary web app coding challenge](https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/a6rgn13dkuwmpdxngiaj.jpg)
 
 Este aplicativo web foi desenvolvido como uma solução para o Desafio do Dicionário Web App proposto pela Frontend Mentor. 
@@ -10,8 +7,8 @@ Ele permite que os usuários pesquisem o significado, uso, exemplos de aplicaç�
 ## ✔️ Funcionaidades: 
 * Pesquisa: Digite uma palavra e clique no botão de pesquisa para obter seu significado, uso, exemplos, sinônimos, antônimos e pronúncia.
 * Alternância de Tema: Alterne entre os temas claro e escuro para uma experiência de usuário mais personalizada.
-* Personalização de Fonte (🚧Implementação Futura🚧): Modifique a fonte utilizada no aplicativo de acordo com suas preferências.
-* Tratamento de Erros (🚧Implementação Futura🚧): Exiba mensagens de erro para entradas de palavras incorretas.
+* Personalização de Fonte : Modifique a fonte utilizada no aplicativo de acordo com suas preferências.
+* Tratamento de Erros: Exibe mensagens de erro para entradas de palavras incorretas.
 
 ## 🔨Tecnologias Utilizadas
 * HTML
