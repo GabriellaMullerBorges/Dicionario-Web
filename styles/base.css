@@ -25,14 +25,14 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--background-light)
+    background-color: var(--background-light);
 }
   
 #container{
     padding: 24px;
     width:95%;
     height: fit-content;
-    background-color: var(--light-container);
+    background-color: white;
     border-radius: 25px;
     
 }
@@ -58,3 +58,9 @@ body{
       }
   }
 
+
+  @media (min-width: 800px) {
+    body {
+      font-size: 18px;
+    }
+  }

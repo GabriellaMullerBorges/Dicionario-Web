@@ -1,3 +1,5 @@
+
+
 // Selecionar elementos HTML
 const pesquisaBtn = document.querySelector("#botao-pesquisa");
 const palavraInput = document.getElementById('inp-word');
@@ -26,16 +28,30 @@ async function pegaPalavra(palavra) {
         }       
 
         console.log(urlConvertida);
-       
+        
          mostraInfos(urlConvertida);
         
 
         return urlConvertida;
     } catch (erro) {
-        alert(erro);
+      testaErro(urlConvertida) ;
     }
+    
+//Função que mostra erro de palavra desconhecida
+    function testaErro(objeto){
+      if(objeto.title == 'No Definitions Found'){
 
-  
+        let html = "";
+        
+        html += '<div class="palavra">';
+        html += '<div class="escrita">';
+        html += '<div class="palavra-digitada-div">';
+        html += `<p class="palavra-digitada">${objeto.message}</p>`;
+        html += '</div>';
+
+        resultado.innerHTML = html
+      }
+  }
       
 function mostraInfos(array){
     
@@ -68,11 +84,27 @@ function mostraInfos(array){
           audio.play();
         }
       }
-    
-           
-    html += `<img src="./images/icon-play.svg" class="som" alt="icone som" onclick="window.playAudio('${array[0].phonetics[0].audio}')">`;
-    html += '</div>';
-    html += '</div>';
+      
+    // verificação para ver se existe mais de um audio e se não está vazio
+      let audioToPlay = '';
+
+      for (let i = 0; i < array[0].phonetics.length; i++) {
+        if (array[0].phonetics[i].audio) {
+          audioToPlay = array[0].phonetics[i].audio;
+          break;
+        }
+      }
+
+      html += `<img src="./images/icon-play.svg" class="som" alt="icone som"`;
+
+      if (audioToPlay) {
+        html += ` onclick="window.playAudio('${audioToPlay}')">`;
+      } else {
+        html += '>';
+      }
+
+      html += '</div>';
+      html += '</div>';
   
     html += '<div class="explicacao">';
   

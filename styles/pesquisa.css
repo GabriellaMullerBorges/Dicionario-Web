@@ -40,3 +40,15 @@
     background-color: transparent;
     cursor: pointer;
 }
+
+#serif {
+    font-family: serif;
+}
+
+#sans-serif{
+    font-family: sans-serif;
+}
+
+#mono {
+    font-family: monospace;
+}

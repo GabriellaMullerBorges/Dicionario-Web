@@ -3,6 +3,7 @@ const body = document.querySelector('body');
 const container = document.querySelector('.container')
 const dropdownlink = document.querySelector('.dropdownlink')
 const dropdown = document.querySelector('.dropdown')
+const dropdownMenu = document.querySelector('.dropdown-menu')
 const tipoPalavra = document.querySelector('.tipo-palavra');
 const itemSignificado = document.querySelector('.item-significado')
 const listaSignificado = document.querySelector('.lista-significados')
@@ -20,7 +21,8 @@ themeButton.addEventListener('change', () => {
   dropdownlink.classList.toggle('theme-dark');
   dropdown.classList.toggle('theme-light');
   dropdown.classList.toggle('theme-dark');
- 
+  dropdownMenu.classList.toggle('theme-light');
+  dropdownMenu.classList.toggle('theme-dark');
   resultados.classList.toggle('theme-light');
   resultados.classList.toggle('theme-dark');
 });
